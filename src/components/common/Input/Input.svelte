@@ -2,10 +2,10 @@
   import { VariantProps, cva } from 'class-variance-authority';
   import type { HTMLInputAttributes } from 'svelte/elements';
 
-  const input = cva('input', {
+  const input = cva('px-3 py-2', {
     variants: {
       intent: {
-        default: 'rounded outline-none',
+        default: 'rounded outline-none text-lg font-normal',
       },
     },
   });
