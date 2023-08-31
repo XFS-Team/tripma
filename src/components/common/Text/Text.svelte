@@ -24,6 +24,7 @@
     color?: 'default' | 'secondary' | 'primary';
     size?: 'default' | 'small' | 'large';
     style?: 'default' | 'bold';
+    class?: string;
   }
 
   export let color: $$Props['color'] = 'default';
