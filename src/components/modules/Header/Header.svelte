@@ -18,14 +18,14 @@
   </Banner>
   <div class="flex items-center justify-between px-6 py-5">
     <div class="flex">
-      <Button class="px-0 mr-3 lg:hidden">
+      <Button class="px-0 mr-3 md:hidden">
         <img src="/icons/menu.svg" alt="menu" />
       </Button>
       <a href="/" class="p-3">
         <img src={logo} alt="logo" />
       </a>
     </div>
-    <div class="flex sm:hidden lg:flex">
+    <div class="flex md:flex">
       <Navbar/>
       {#if isLogin}
         <div class="relative ml-6">
