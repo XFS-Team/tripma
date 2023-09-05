@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VariantProps, cva } from 'class-variance-authority';
+  import { cva } from 'class-variance-authority';
 
   const text = cva('', {
     variants: {
@@ -20,10 +20,11 @@
     },
   });
 
-  interface $$Props extends VariantProps<typeof text> {
+  interface $$Props {
     color?: 'default' | 'secondary' | 'primary';
     size?: 'default' | 'small' | 'large';
     style?: 'default' | 'bold';
+    class?: string;
   }
 
   export let color: $$Props['color'] = 'default';

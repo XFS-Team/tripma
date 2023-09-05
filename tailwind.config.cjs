@@ -16,7 +16,23 @@ module.exports = {
         'grey-100': '#FAFAFA',
         red: '#EB5757',
       },
+      boxShadow: {
+        dropDown:
+          '0px 12px 24px 0px rgba(27, 59, 119, 0.05), 0px 24px 60px 0px rgba(6, 47, 125, 0.05), 0px 2px 4px 0px rgba(7, 4, 146, 0.10)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.scroll-hidden::-webkit-scrollbar': {
+            display: 'none',
+        },
+        '.scroll-hidden': { 
+            '-ms-overflow-style': 'none',
+            'scrollbar-width': 'none',
+        },
+      });
+    }
+  ],
 };
