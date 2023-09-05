@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VariantProps, cva } from 'class-variance-authority';
+  import { cva } from 'class-variance-authority';
   import type { HTMLButtonAttributes } from 'svelte/elements';
 
   const button = cva('rounded', {
@@ -11,21 +11,26 @@
         disabled: 'bg-grey-200/[.3] text-grey-400 cursor-not-allowed',
       },
       size: {
-        default: 'text-[18px] px-5 py-3',
+        large: 'text-lg px-5 py-3',
+        default: 'text-lg',
         small: 'px-2 py-0.5 text-base',
       },
     },
   });
 
-  interface $$Props extends HTMLButtonAttributes, VariantProps<typeof button> {
+  interface $$Props extends HTMLButtonAttributes {
     intent?: 'default' | 'primary' | 'secondary' | 'disabled';
-    size?: 'default' | 'small';
+    size?: 'default' | 'small' | 'large';
   }
 
   export let intent: $$Props['intent'] = 'default';
-  export let size: $$Props['size'] = 'default';
+  export let size: $$Props['size'] = 'default'
 </script>
 
-<button {...$$props} class={button({ intent, size, class: $$props.class })}>
+<button
+  on:click
+  {...$$props}
+  class={button({ intent, size, class: $$props.class })}
+>
   <slot />
 </button>
