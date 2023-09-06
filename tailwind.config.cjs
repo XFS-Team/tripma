@@ -20,5 +20,14 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '1440px',
+          margin: '0 auto',
+        },
+      });
+    },
+  ],
 };
