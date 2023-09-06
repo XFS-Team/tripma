@@ -16,7 +16,7 @@
     </p>
     <p class="px-16 block md:hidden">Join Tripma now and save 20%</p>
   </Banner>
-  <div class="flex items-center justify-between px-6 py-5">
+  <div class="flex items-center justify-between px-6 py-5 container">
     <div class="flex">
       <Button class="px-0 mr-3 md:hidden">
         <img src="/icons/menu.svg" alt="menu" />
