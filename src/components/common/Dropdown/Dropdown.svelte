@@ -6,7 +6,7 @@
   import Counter from '../Counter/Counter.svelte';
 
   const dropDown = cva(
-    'border-2 border-solid border-primary rounded max-w-[256px] relative py-1 inline-block',
+    'border-2 border-solid rounded xl:max-w-[256px] relative py-1 inline-block',
     {
       variants: {
         size: {
@@ -19,6 +19,7 @@
 
   let isDropdownShow = false;
   let selectedValue: IItemDropdown;
+  let container: HTMLDivElement;
 
   const handleDropdownChange = (itemSelected: IItemDropdown) => {
     selectedValue = itemSelected;
@@ -29,16 +30,16 @@
     isDropdownShow = !isDropdownShow;
   };
 
-  const handleClickOutside = () => {
-    isDropdownShow = false;
-  };
+  function onWindowClick(e: MouseEvent) {
+    if (container.contains(e.target as Node) == false) isDropdownShow = false;
+  }
 
   interface $$Props {
     type?: 'default' | 'checkbox' | 'counter';
     placeholder?: string;
     icon?: string;
     listDropdown: IListDropdown;
-    class?:string
+    class?: string;
   }
 
   export let type: $$Props['type'] = 'default';
@@ -47,28 +48,24 @@
   export let listDropdown: $$Props['listDropdown'] = [];
 </script>
 
-<div class={dropDown({ class: $$props.class })}>
+<svelte:window on:click={onWindowClick} />
+
+<div bind:this={container} class="{dropDown({ class: $$props.class })} {isDropdownShow ? 'border-primary' : 'border-transparent'}">
   <Button
     on:click={handleToggleDropdown}
     size="small"
-    class="flex items-center w-full text-lg"
+    class="flex items-center w-full"
   >
     <img class="mr-2" src={icon} alt="icon fly" />
     {#if selectedValue}
-      <p>{selectedValue.name}</p>
+      <Text class="text-sm md:text-lg">{selectedValue.name}</Text>
     {:else}
-      <Text>{placeholder}</Text>
+      <Text class="text-sm md:text-lg">{placeholder}</Text>
     {/if}
   </Button>
   {#if isDropdownShow}
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:click={handleClickOutside}
-        class="fixed inset-0 z-10"
-      />
     <ul
-      class="absolute top-[calc(100%+2px)] w-[230px] left-6 bg-white border border-solid border-grey-200 rounded-lg shadow-dropDown p-4 max-h-[312px] overflow-y-auto scroll-hidden z-20"
+      class="absolute top-[calc(100%+2px)] w-full xl:w-[230px] xl:left-6 bg-white border border-solid border-grey-200 rounded-lg shadow-dropDown p-4 max-h-[312px] overflow-y-auto scroll-hidden z-20"
     >
       {#each listDropdown as itemDropdown}
         <li>
@@ -78,10 +75,14 @@
               class="rounded-md hover:bg-primary hover:text-white mb-2 w-full text-left px-3 py-1 text-base"
             >
               {itemDropdown.name}
-            </Button>
+            </Button>  
           {/if}
           {#if type === 'counter'}
-            <Counter valueCounter={itemDropdown.value} class="mb-2" name={itemDropdown.name} />
+            <Counter
+              valueCounter={itemDropdown.value}
+              class="mb-2"
+              name={itemDropdown.name}
+            />
           {/if}
         </li>
       {/each}
