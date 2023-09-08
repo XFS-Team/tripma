@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FlightSearch from '@/components/modules/FlightSearch/FlightSearch.svelte';
+import FlightDeals from '@/components/modules/FlightDeals/FlightDeals.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <FlightSearch/>
+    <FlightSearch client:load/>
+    <FlightDeals/>
   </main>
 </Layout>
 

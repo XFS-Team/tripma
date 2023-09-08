@@ -2,7 +2,7 @@
   import { cva } from 'class-variance-authority';
   import Text from '../Text/Text.svelte';
   import Button from '../Button/Button.svelte';
-  import type { IItemDropdown, IListDropdown } from '@/model/dropdown';
+  import type { IItemDropdown, IListDropdown } from '@/model';
   import Counter from '../Counter/Counter.svelte';
 
   const dropDown = cva(

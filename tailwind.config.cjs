@@ -6,6 +6,7 @@ module.exports = {
       boxShadow: {
         dropDown:
           '0px 12px 24px 0px rgba(27, 59, 119, 0.05), 0px 24px 60px 0px rgba(6, 47, 125, 0.05), 0px 2px 4px 0px rgba(7, 4, 146, 0.10)',
+          card: '0px 12px 32px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(28, 5, 77, 0.10)'
       },
       fontFamily: {
         sans: ['Nunito Sans', 'Inter'],
@@ -19,6 +20,7 @@ module.exports = {
         'purple-white': '#F6F6FE',
         'grey-400': '#7C8DB0',
         'grey-600': '#6E7491',
+        'grey-300': '#A1B0CC',
         'grey-200': '#CBD4E64D',
         'grey-100': '#FAFAFA',
       },
