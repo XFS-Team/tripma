@@ -1,5 +1,4 @@
-<script context="module">
-  export const MENU_LIST = [
+export const LIST_MENU_NAV = [
     {
       name: 'Flights',
       href: '/flights',
@@ -12,5 +11,4 @@
       name: 'Packages',
       href: '/packages',
     },
-  ];
-</script>
+];
