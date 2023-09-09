@@ -1,6 +1,6 @@
-import type { IListFlightDeals } from "@/model";
+import type { IListCartPlace } from "@/model";
 
-export const LIST_FLIGHT_DEALS: IListFlightDeals = [
+export const LIST_FLIGHT_DEALS: IListCartPlace = [
     {
         image:"/images/card-1.png",
         name:"The Bund",

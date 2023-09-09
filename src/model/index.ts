@@ -1,2 +1,2 @@
 export * from "./dropdown"
-export * from "./flightDeals"
+export * from "./cartPlace"
