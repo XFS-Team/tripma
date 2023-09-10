@@ -19,6 +19,7 @@ module.exports = {
         'purple-dark': '#1513A0',
         'purple-light': '#E9E8FC',
         'purple-white': '#F6F6FE',
+        'grey-900': '#27273F',
         'grey-400': '#7C8DB0',
         'grey-600': '#6E7491',
         'grey-300': '#A1B0CC',
