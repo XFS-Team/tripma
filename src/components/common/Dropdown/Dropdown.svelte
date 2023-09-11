@@ -3,6 +3,7 @@
   import Text from '../Text/Text.svelte';
   import Button from '../Button/Button.svelte';
   import type { IItemDropdown, IListDropdown } from '@/model/dropdown';
+  import iconDown from '/icons/arrow-down.svg';
   import Counter from '../Counter/Counter.svelte';
 
   const dropDown = cva(
@@ -39,33 +40,49 @@
     placeholder?: string;
     icon?: string;
     listDropdown: IListDropdown;
+    isLabel?: boolean;
     class?: string;
+    border?: string;
   }
 
   export let type: $$Props['type'] = 'default';
   export let placeholder: $$Props['placeholder'] = 'Placeholder';
   export let icon: $$Props['icon'] = '';
   export let listDropdown: $$Props['listDropdown'] = [];
+  export let isLabel: $$Props['isLabel'] = false;
+  export let border: $$Props['border'] = 'border-transparent';
 </script>
 
 <svelte:window on:click={onWindowClick} />
 
-<div bind:this={container} class="{dropDown({ class: $$props.class })} {isDropdownShow ? 'border-primary' : 'border-transparent'}">
+<div
+  bind:this={container}
+  class="{dropDown({ class: $$props.class })} {isDropdownShow
+    ? 'border-primary'
+    : border}"
+>
   <Button
     on:click={handleToggleDropdown}
     size="small"
     class="flex items-center w-full"
   >
-    <img class="mr-2" src={icon} alt="icon fly" />
+    {#if !isLabel}
+      <img class="mr-2" src={icon} alt="icon fly" />
+    {/if}
     {#if selectedValue}
       <Text class="text-sm md:text-lg">{selectedValue.name}</Text>
     {:else}
       <Text class="text-sm md:text-lg">{placeholder}</Text>
     {/if}
+    {#if isLabel}
+      <img class="ml-1" src={iconDown} alt="icon down" />
+    {/if}
   </Button>
   {#if isDropdownShow}
     <ul
-      class="absolute top-[calc(100%+2px)] w-full xl:w-[230px] xl:left-6 bg-white border border-solid border-grey-200 rounded-lg shadow-dropDown p-4 max-h-[312px] overflow-y-auto scroll-hidden z-20"
+      class={`absolute top-[calc(100%+2px)] w-full xl:w-[230px] bg-white border border-solid border-grey-200 rounded-lg shadow-dropDown p-4 max-h-[312px] overflow-y-auto scroll-hidden z-20 ${
+        isLabel ? 'left-0' : 'xl:left-6'
+      }`}
     >
       {#each listDropdown as itemDropdown}
         <li>
@@ -75,7 +92,7 @@
               class="rounded-md hover:bg-primary hover:text-white mb-2 w-full text-left px-3 py-1 text-base"
             >
               {itemDropdown.name}
-            </Button>  
+            </Button>
           {/if}
           {#if type === 'counter'}
             <Counter

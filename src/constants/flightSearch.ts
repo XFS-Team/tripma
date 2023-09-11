@@ -53,3 +53,30 @@ export const LIST_DATA_ADULT = [
     value: '0',
   },
 ];
+
+export const LIST_DATA_FILTER = [
+  {
+    id: 1,
+    name: 'Max price',
+  },
+  {
+    id: 2,
+    name: 'Shops',
+  },
+  {
+    id: 3,
+    name: 'Times',
+  },
+  {
+    id: 4,
+    name: 'Airlines',
+  },
+  {
+    id: 5,
+    name: 'Seat class',
+  },
+  {
+    id: 6,
+    name: 'More',
+  },
+];
