@@ -10,7 +10,7 @@
 
 <section class="container">
   <div
-    class="bg-[url('/images/world-map.png')] bg-cover bg-no-repeat h-[500px] lg:h-[700px]"
+    class="bg-[url('/images/world-map.png')] bg-cover bg-no-repeat h-auto sm:h-[500px] lg:h-[700px]"
   >
     <div
       class="flex flex-col items-center justify-center px-8 mt-4 md:mt-16 lg:mt-24"

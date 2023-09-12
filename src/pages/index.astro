@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import FlightSearch from '@/components/modules/FlightSearch/FlightSearch.svelte';
 import FlightDeals from '@/components/modules/FlightDeals/FlightDeals.svelte';
 import PlacesStay from '@/components/modules/PlacesStay/PlacesStay.svelte';
+import CustomerReview from '@/components/modules/CustomerReview/CustomerReview.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -10,6 +11,7 @@ import PlacesStay from '@/components/modules/PlacesStay/PlacesStay.svelte';
     <FlightSearch client:load/>
     <FlightDeals/>
     <PlacesStay/>
+    <CustomerReview client:load/>
   </main>
 </Layout>
 
