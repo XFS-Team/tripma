@@ -4,6 +4,7 @@
   import Button from '../Button/Button.svelte';
   import type { IItemDropdown, IListDropdown } from '@/model/dropdown';
   import iconDown from '/icons/arrow-down.svg';
+  import type { IItemDropdown, IListDropdown } from '@/model';
   import Counter from '../Counter/Counter.svelte';
 
   const dropDown = cva(
