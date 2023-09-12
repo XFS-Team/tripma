@@ -7,9 +7,14 @@
 
 <section class="container px-8 py-10 mb-10">
   <div class="flex justify-between mb-6">
-    <Text color="secondary" style="bold" size="large">Find your next adventure with these <span class="text-primary">flight deals</span></Text>
-    <a class="text-grey-300 text-2xl flex" href="/">All 
-    <img src={arrowNextImage} alt="icon next">
+    <Text color="secondary" style="bold" size="large"
+      >Find your next adventure with these <span class="text-primary"
+        >flight deals</span
+      ></Text
+    >
+    <a class="text-grey-300 text-2xl flex" href="/"
+      >All
+      <img src={arrowNextImage} alt="icon next" />
     </a>
   </div>
   <div class="flex flex-wrap -mx-2 lg:-mx-5">
