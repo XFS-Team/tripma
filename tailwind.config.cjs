@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         primary: '#605DEC',
+        secondary:'#5CD6C0',
         danger: '#EB5757',
         warning: '#FFD12F',
         'purple-dark': '#1513A0',
@@ -21,6 +22,7 @@ module.exports = {
         'grey-400': '#7C8DB0',
         'grey-900':'#27273F',
         'grey-600': '#6E7491',
+        'grey-300':'#A1B0CC',
         'grey-200': '#CBD4E64D',
         'grey-100': '#FAFAFA',
       },

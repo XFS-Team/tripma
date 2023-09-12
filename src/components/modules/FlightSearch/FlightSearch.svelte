@@ -50,10 +50,7 @@
             class="hidden xl:block w-[200px]"
             type="counter"
           />
-          <Button
-            intent="primary"
-            class="w-full max-w-[420px] xl:w-auto px-5 py-2.5 mt-4 xl:mt-0">Search</Button
-          >
+          <a class="bg-primary rounded text-grey-100 hover:bg-purple-dark w-full max-w-[420px] xl:w-auto px-5 py-2.5 mt-4 xl:mt-0" href="/search">Search</a>
         </div>
       </div>
     </div>
