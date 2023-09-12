@@ -15,6 +15,7 @@ module.exports = {
         primary: '#605DEC',
         danger: '#EB5757',
         warning: '#FFD12F',
+        secondary:'#22C3A6',
         purple: {
           dark: '#1513A0',
           light:'#E9E8FC',
