@@ -20,6 +20,7 @@ module.exports = {
           dark: '#1513A0',
           light:'#E9E8FC',
           while: '#F6F6FE',
+          extra: '#E9E8FC',
         },
         grey: {
           100: '#FAFAFA',

@@ -1,6 +1,7 @@
 export * from "./footer"
 export * from "./navbar"
 export * from "./flightSearch"
+export * from "./filter"
 export * from "./flightDeals"
 export * from "./placesStay"
 export * from "./customerReview"
