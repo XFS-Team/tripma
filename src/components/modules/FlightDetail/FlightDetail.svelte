@@ -45,10 +45,11 @@
     </div>
   </div>
   {#if listSelectedFlight.length > 1}
-    <a  class="bg-primary text-grey-100 hover:bg-purple-dark text-lg px-5 py-3" href="/info">Passenger information</a>
-  {:else}
-    <Button size="large" intent="secondary"
-      >Save and close</Button
+    <a
+      class="bg-primary text-grey-100 hover:bg-purple-dark text-lg px-5 py-3 rounded"
+      href="/info">Passenger information</a
     >
+  {:else}
+    <Button size="large" intent="secondary">Save and close</Button>
   {/if}
 </div>

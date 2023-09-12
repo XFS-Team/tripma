@@ -2,12 +2,16 @@
 import Layout from '@/layouts/Layout.astro';
 import FlightFilter from '@/components/modules/FlightFilter/FlightFilter.svelte';
 import FlightFilterResult from '@/components/modules/FlightFilterResult/FlightFilterResult.svelte';
+import PlacesStayDetail from '@/components/modules/PlacesStayDetail/PlacesStayDetail.svelte';
+import PopularPeopleSearch from '@/components/modules/PopularPeopleSearch/PopularPeopleSearch.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="container px-8">
     <FlightFilter client:load />
-    <FlightFilterResult  client:load/>
+    <FlightFilterResult client:load />
+    <PlacesStayDetail  />
+    <PopularPeopleSearch />
   </main>
 </Layout>
 

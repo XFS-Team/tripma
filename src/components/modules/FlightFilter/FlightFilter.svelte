@@ -8,7 +8,7 @@
   import { LIST_DATA_ADULT, LIST_DATA, LIST_DATA_FILTER } from '@/constants';
 </script>
 
-<form class="flex flex-col items-center lg:items-start mb-12" action="#">
+<form on:submit|preventDefault class="flex flex-col items-center lg:items-start mb-12" action="#">
   <div
     class="w-full sm:w-[420px] lg:w-fit flex justify-center items-center lg:border-2 border-solid border-grey-200 flex-wrap mb-6"
   >
