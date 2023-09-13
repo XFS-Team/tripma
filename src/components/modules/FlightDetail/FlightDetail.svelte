@@ -2,7 +2,6 @@
   import type { IFlightInfo } from '@/model/flight';
   import src from '/images/avt-flight.png';
   import Text from '@/components/common/Text/Text.svelte';
-  import Button from '@/components/common/Button/Button.svelte';
 
   interface $$Props {
     listSelectedFlight: IFlightInfo[];
@@ -31,8 +30,8 @@
     {/each}
   </ul>
 </div>
-<div class="flex flex-col items-end">
-  <div class="flex mb-12">
+<div class="flex flex-col mb-12 items-end">
+  <div class="flex">
     <div class="text-end mr-10">
       <Text class="text-grey-900 mb-2">Subtotal</Text>
       <Text class="text-grey-900 mb-2">Taxes and Fees</Text>
@@ -44,12 +43,4 @@
       <Text class="text-grey-900">$624</Text>
     </div>
   </div>
-  {#if listSelectedFlight.length > 1}
-    <a
-      class="bg-primary text-grey-100 hover:bg-purple-dark text-lg px-5 py-3 rounded"
-      href="/info">Passenger information</a
-    >
-  {:else}
-    <Button size="large" intent="secondary">Save and close</Button>
-  {/if}
 </div>
