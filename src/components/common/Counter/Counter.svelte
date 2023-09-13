@@ -10,13 +10,13 @@
   });
 
   interface $$Props {
-    name: string;
+    name?: string;
     class?: string;
     valueCounter: string;
   }
 
   const handleIncrease = () => {
-   const valueNumber = parseInt(valueCounter) + 1;
+    const valueNumber = parseInt(valueCounter) + 1;
     valueCounter = valueNumber.toString();
   };
   
@@ -27,12 +27,14 @@
     }
   };
 
-  export let valueCounter = '';
+  export let valueCounter = '1';
   export let name: $$Props['name'] = '';
 </script>
 
 <div class={counter({ class: $$props.class })}>
-  <Text class="w-20">{name}:</Text>
+  {#if name}
+    <Text class="w-20">{name}:</Text>
+  {/if}
   <div class="flex items-center gap-x-2">
     <Button
       on:click={handleDecrease}

@@ -1,0 +1,10 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Info from '@/components/modules/Info/Info.svelte';
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="container px-8">
+    <Info client:load />
+  </main>
+</Layout>

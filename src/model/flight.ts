@@ -1,5 +1,5 @@
 export interface IFlightInfo {
-    key: string;
+  key: string;
   srcImage: string;
   departure: string;
   arrival: string;
@@ -20,4 +20,3 @@ export interface IIdSelectedFlight {
   departure: string;
   return: string;
 }
-

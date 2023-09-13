@@ -28,7 +28,7 @@
 </script>
 
 <button
-  on:click
+  on:click|preventDefault
   {...$$props}
   class={button({ intent, size, class: $$props.class })}
 >
