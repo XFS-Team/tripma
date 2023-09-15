@@ -6,13 +6,11 @@
     heading: string;
     description: string;
     okSubmitText: string;
-    onSubmit: () => void;
   }
 
   export let heading: $$Props['heading'];
   export let description: $$Props['description'];
   export let okSubmitText: $$Props['okSubmitText'];
-  export let onSubmit: $$Props['onSubmit'];
 </script>
 
 <div
@@ -25,8 +23,9 @@
     <Text class="mb-5">{description}</Text>
     <div class="flex justify-end gap-x-4">
       <Button size="large" intent="secondary">Cancel</Button>
-      <Button on:click={onSubmit} size="large" intent="primary"
-        >{okSubmitText}</Button
+      <a
+        class="rounded border border-primary text-primary hover:bg-purple-light text-lg px-5 py-3"
+        href="/payment">{okSubmitText}</a
       >
     </div>
   </div>

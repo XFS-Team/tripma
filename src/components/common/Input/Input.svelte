@@ -1,7 +1,6 @@
 <script lang="ts">
   import { cva } from 'class-variance-authority';
   import type { HTMLInputAttributes } from 'svelte/elements';
-  import Text from '../Text/Text.svelte';
 
   const input = cva('px-3 py-[9px] border border-solid border-grey-300', {
     variants: {
