@@ -63,7 +63,7 @@
         >Save and close</Button
       >
       <a
-        href="/setplace"
+        href="/seatplace"
         intent="disabled"
         class={`rounded px-5 py-3 text-lg ${
           isFilled
@@ -76,7 +76,7 @@
   <div class="flex items-end flex-col">
     <FlightDetail listSelectedFlight={SELECT_FLIGHT} />
     <a
-      href="/setplace"
+      href="/seatplace"
       intent="disabled"
       class={`rounded px-5 py-2.5 mt-8 mb-[104px] text-lg ${
         isFilled

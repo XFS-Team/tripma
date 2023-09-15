@@ -3,7 +3,7 @@
     import { LIST_CUSTOMER_REVIEW } from "@/constants";
 </script>
 
-<section class="contanier px-8 py-16 mb-10">
+<section class="container px-8 py-16 mb-10">
     <h2 class="text-2xl font-bold text-grey-600 text-center mb-6">
         What <span class="text-primary">Tripma</span> users are saying
     </h2>
