@@ -3,7 +3,7 @@
   import FormInfoPassenger from '../FormInfoPassenger/FormInfoPassenger.svelte';
 </script>
 
-<section>
+<section class="px-24">
   <h1>Passenger information</h1>
   <Text
     >Enter the required information for each traveler and be sure that it

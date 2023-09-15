@@ -1,0 +1,8 @@
+---
+import BookSeat from '@/components/modules/BookSeat/BookSeat.svelte';
+import OnlyHeaderLayout from '@/layouts/OnlyHeaderLayout.astro';
+---
+
+<OnlyHeaderLayout title="Welcome to Astro.">
+    <BookSeat client:load />
+</OnlyHeaderLayout>

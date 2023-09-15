@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VariantProps, cva } from 'class-variance-authority';
+  import { cva } from 'class-variance-authority';
   import closePrimaryIcon from '/icons/close-primary.svg';
   import closeWhiteIcon from '/icons/close-white.svg';
   import Button from '@/components/common/Button/Button.svelte';
@@ -17,20 +17,25 @@
     },
   );
 
-  interface $$Props extends VariantProps<typeof banner> {
+  interface $$Props {
     type?: 'warning' | 'danger' | 'promotion';
+    onClose?: () => void;
   }
 
   export let type: $$Props['type'] = 'promotion';
+  export let onClose: $$Props['onClose'] = () => {};
 </script>
 
 <div {...$$props} class={banner({ type, class: $$props.class })}>
   <slot />
-  <Button class="absolute right-4 top-1/2 -translate-y-1/2 md:right-8">
+  <Button
+    on:click={onClose}
+    class="absolute right-4 top-1/2 -translate-y-1/2 md:right-8"
+  >
     {#if type === 'warning'}
-    <img src={closePrimaryIcon} alt="icon close">
+      <img src={closePrimaryIcon} alt="icon close" />
     {:else}
-    <img src={closeWhiteIcon} alt="icon close" />
+      <img src={closeWhiteIcon} alt="icon close" />
     {/if}
   </Button>
 </div>

@@ -12,7 +12,7 @@
     <div
       class="bg-[url('/images/world-map.png')] bg-cover bg-no-repeat h-[500px] lg:h-[700px] "
     >
-      <div class="flex flex-col items-center justify-center px-8 mt-4 md:mt-16 lg:mt-24">
+      <div class="flex flex-col items-center justify-center px-8">
         <h1
           class="font-extrabold text-center max-w-[756px] bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-600 text-transparent py-10 text-6xl my-8 lg:text-8xl xl:my-12"
         >
