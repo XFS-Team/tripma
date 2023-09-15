@@ -9,12 +9,12 @@
 <div class="flex bg-grey-900">
   <div class="py-5 pl-6 pr-5">
     <h1 class="text-grey-100 font-extrabold text-2xl">SFO</h1>
-    <Text>California, US</Text>
+    <Text class="text-xs">California, US</Text>
   </div>
   <img {src} alt="icon next" />
   <div class="py-5 pl-6 pr-5">
     <h1 class="text-grey-100 font-extrabold text-2xl">NRT</h1>
-    <Text>California, US</Text>
+    <Text class="text-xs">California, US</Text>
   </div>
   <div
     class={cx('text-2xl relative p-6 flex-1', {
@@ -24,7 +24,7 @@
     <Text class="text-white mb-1" size="small"
       >Feb 25 <span class="text-grey-400">|</span> 7:00AM</Text
     >
-    <Text>Departing</Text>
+    <Text class="text-xs">Departing</Text>
     {#if isActive}
       <span
         class="absolute -translate-x-1/2 bottom-0 left-1/2 w-0 h-0
@@ -38,6 +38,6 @@
     <Text class="text-white mb-1" size="small"
       >Feb 25 <span class="text-grey-400">|</span> 7:00AM</Text
     >
-    <Text>Departing</Text>
+    <Text class="text-xs">Departing</Text>
   </div>
 </div>
