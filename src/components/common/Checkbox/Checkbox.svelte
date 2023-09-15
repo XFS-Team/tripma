@@ -36,5 +36,5 @@
       <span class="w-2 h-2 bg-primary rounded-[1px]" />
     {/if}
   </Button>
-  <Text>{label}</Text>
+  <Text color="secondary">{label}</Text>
 </div>
