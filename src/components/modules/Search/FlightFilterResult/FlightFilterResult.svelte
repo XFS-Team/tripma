@@ -1,11 +1,11 @@
 <script lang="ts">
   import Text from '@/components/common/Text/Text.svelte';
-  import FlightDetail from '../FlightDetail/FlightDetail.svelte';
-  import PriceGrid from '../PriceGrid/PriceGrid.svelte';
-  import PriceHistory from '../PriceHistory/PriceHistory.svelte';
-  import PriceRating from '../PriceRating/PriceRating.svelte';
+  import FlightDetail from '../../FlightDetail/FlightDetail.svelte';
+  import PriceGrid from '@/components/modules/Search/PriceGrid/PriceGrid.svelte';
+  import PriceHistory from '@/components/modules/Search/PriceHistory/PriceHistory.svelte';
+  import PriceRating from '@/components/modules/Search/PriceRating/PriceRating.svelte';
   import Button from '@/components/common/Button/Button.svelte';
-  import FlightItem from '../FlightItem/FlightItem.svelte';
+  import FlightItem from '../../FlightItem/FlightItem.svelte';
   import src from '/images/map.png';
   import type { IFlightInfo } from '@/model/flight';
   import { LIST_DATA_DEPARTURE, LIST_DATA_RETURN } from '@/constants';

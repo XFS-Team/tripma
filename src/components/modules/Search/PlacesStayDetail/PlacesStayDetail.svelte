@@ -1,5 +1,5 @@
 <script>
-  import CartPlace from '../CardPlace/CardPlace.svelte';
+  import CartPlace from '../../CardPlace/CardPlace.svelte';
   import Text from '@/components/common/Text/Text.svelte';
   import arrowNextImage from '/icons/arrow-right.svg';
   import {LIST_FLIGHT_DEALS_DETAIL } from '@/constants';
@@ -14,7 +14,7 @@
       size="large"
       >places to stay <span class="text-primary">flight deals </span>in Japan</Text
     >
-    <a class="text-grey-300 text-lg md:text-2xl flex items-center" href="/"
+    <a class="text-grey-300 text-lg md:text-2xl flex items-center" href='/public'
       >All
       <img src={arrowNextImage} alt="icon next" />
     </a>

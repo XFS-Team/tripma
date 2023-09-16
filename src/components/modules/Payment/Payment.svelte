@@ -8,7 +8,7 @@
   import iconGoogle from '/icons/googlefill.svg';
   import iconApple from '/icons/apple-mac.svg';
   import iconFace from '/icons/facebookFill.svg';
-  import NavPayment from '../NavPayment/NavPayment.svelte';
+  import NavPayment from '@/components/modules/Payment/NavPayment/NavPayment.svelte';
 
   let isFilled = true;
 </script>
@@ -103,32 +103,32 @@
       >
       <div class="mt-14 flex gap-x-6">
         <a
-          href="/seatplace"
+          href="/bookseat"
           intent="disabled"
           class="rounded px-5 py-2.5 mt-8 mb-[104px] text-lg border border-primary text-primary hover:bg-purple-light"
           >Back to seat select</a
         >
         <a
-          href="/seatplace"
+          href="/payment-success"
           intent="disabled"
           class={`rounded px-5 py-2.5 mt-8 mb-[104px] text-lg ${
             isFilled
               ? 'bg-primary text-grey-100 hover:bg-purple-dark'
               : 'bg-grey-200/[.3] text-grey-400 cursor-not-allowed'
-          }`}>Select seats</a
+          }`}>Confirm and pay</a
         >
       </div>
     </div>
     <div class="ml-[160px] flex flex-col items-end">
       <FlightDetail listSelectedFlight={SELECT_FLIGHT} />
       <a
-        href="/seatplace"
+        href="/payment-success"
         intent="disabled"
         class={`rounded px-5 py-2.5 mt-8 mb-[104px] text-lg ${
           isFilled
             ? 'bg-primary text-grey-100 hover:bg-purple-dark'
             : 'bg-grey-200/[.3] text-grey-400 cursor-not-allowed'
-        }`}>Select seats</a
+        }`}>Confirm and pay</a
       >
     </div>
   </div>

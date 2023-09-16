@@ -1,6 +1,6 @@
 <script>
   import Text from '@/components/common/Text/Text.svelte';
-  import FormInfoPassenger from '../FormInfoPassenger/FormInfoPassenger.svelte';
+  import FormInfoPassenger from '@/components/modules/Info/FormInfoPassenger/FormInfoPassenger.svelte';
 </script>
 
 <section class="px-24 py-14">
