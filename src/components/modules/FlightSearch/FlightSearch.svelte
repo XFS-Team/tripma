@@ -19,7 +19,7 @@
           It’s more than just a trip
         </h1>
         <div
-          class="w-full sm:w-[420px] xl:w-auto flex items-center justify-center xl:border-2 border-solid border-grey-200 flex-wrap"
+          class="w-full sm:w-[420px] xl:w-auto flex justify-center xl:border-2 border-solid border-grey-200 flex-wrap"
         >
           <div class="flex flex-wrap border-2 border-solid border-grey-200 rounded xl:border-none xl:rounded-none">
             <Dropdown
