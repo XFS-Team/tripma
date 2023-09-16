@@ -2,9 +2,9 @@
   import logo from '/logo.svg';
   import avatar from '/images/avatar.png';
   import Button from '@/components/common/Button/Button.svelte';
-  import Navbar from '../Navbar/Navbar.svelte';
+  import Navbar from '@/components/modules/Header/Navbar/Navbar.svelte';
   import { cx } from 'class-variance-authority';
-  import Banner from '../Banner/Banner.svelte';
+  import Promotion from '@/components/modules/Header/Promotion/Promotion.svelte';
 
   const isLogin = true;
   let isPromotion = false;
@@ -18,13 +18,13 @@
 
 <header class={cx('fixed top-0 left-0 z-50 bg-white w-full')}>
   {#if isPromotion}
-    <Banner onClose={handleClosePromotion} type="warning">
+    <Promotion onClose={handleClosePromotion} type="warning">
       <p class="px-16 hidden md:block">
         Join Tripma today and save up to 20% on your flight using code TRAVEL at
         checkout. Promotion valid for new users only.
       </p>
       <p class="px-16 block md:hidden">Join Tripma now and save 20%</p>
-    </Banner>
+    </Promotion>
   {/if}
   <div class="flex items-center justify-between px-6 py-5 container">
     <div class="flex">

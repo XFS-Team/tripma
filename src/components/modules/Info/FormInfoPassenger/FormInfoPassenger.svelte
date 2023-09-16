@@ -1,7 +1,7 @@
 <script>
   import Input from '@/components/common/Input/Input.svelte';
   import Text from '@/components/common/Text/Text.svelte';
-  import FlightDetail from '../FlightDetail/FlightDetail.svelte';
+  import FlightDetail from '../../FlightDetail/FlightDetail.svelte';
   import Checkbox from '@/components/common/Checkbox/Checkbox.svelte';
   import Counter from '@/components/common/Counter/Counter.svelte';
   import Button from '@/components/common/Button/Button.svelte';
@@ -63,7 +63,7 @@
         >Save and close</Button
       >
       <a
-        href="/seatplace"
+        href="/bookseat"
         intent="disabled"
         class={`rounded px-5 py-3 text-lg ${
           isFilled
@@ -76,7 +76,7 @@
   <div class="flex items-end flex-col">
     <FlightDetail listSelectedFlight={SELECT_FLIGHT} />
     <a
-      href="/seatplace"
+      href="/bookseat"
       intent="disabled"
       class={`rounded px-5 py-2.5 mt-8 mb-[104px] text-lg ${
         isFilled

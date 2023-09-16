@@ -1,5 +1,5 @@
 <script>
-  import CardPlace from '../CardPlace/CardPlace.svelte';
+  import CardPlace from '@/components/modules/CardPlace/CardPlace.svelte';
   import Text from '@/components/common/Text/Text.svelte';
   import arrowNextImage from '/icons/arrow-right.svg';
   import Button from '@/components/common/Button/Button.svelte';

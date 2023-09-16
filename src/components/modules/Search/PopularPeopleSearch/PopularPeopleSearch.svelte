@@ -1,8 +1,7 @@
 <script>
-    import CardPlace from '../CardPlace/CardPlace.svelte';
+    import CardPlace from '../../CardPlace/CardPlace.svelte';
     import Text from '@/components/common/Text/Text.svelte';
     import arrowNextImage from '/icons/arrow-right.svg';
-    import Button from '@/components/common/Button/Button.svelte';
     import { POPULAR_PEOPLE_SEARCH } from '@/constants';
   </script>
   
@@ -14,7 +13,7 @@
          style="bold"
          size="large"
          >People in <span class="text-primary">San Francisco </span>also searched for</Text>
-        <a class="text-grey-300 text-2xl flex" href="/"
+        <a class="text-grey-300 text-2xl flex" href='/public'
           >All
           <img src={arrowNextImage} alt="icon next" />
         </a>

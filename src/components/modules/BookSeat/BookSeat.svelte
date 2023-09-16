@@ -1,6 +1,6 @@
 <script>
-  import InfoSeat from '../InfoSeat/InfoSeat.svelte';
-  import SelectSeat from '../SelectSeat/SelectSeat.svelte';
+  import InfoSeat from '@/components/modules/BookSeat/InfoSeat/InfoSeat.svelte';
+  import SelectSeat from '@/components/modules/BookSeat/SelectSeat/SelectSeat.svelte';
 </script>
 
 <div

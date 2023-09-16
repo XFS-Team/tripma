@@ -1,5 +1,5 @@
 <script>
-  import CartPlace from '../CardPlace/CardPlace.svelte';
+  import CartPlace from '@/components/modules/CardPlace/CardPlace.svelte';
   import Text from '@/components/common/Text/Text.svelte';
   import arrowNextImage from '/icons/arrow-right.svg';
   import { LIST_FLIGHT_DEALS } from '@/constants';
