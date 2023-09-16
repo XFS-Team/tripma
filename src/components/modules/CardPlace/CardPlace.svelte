@@ -9,16 +9,18 @@
     class?: string;
     dataCard: ICartPlace;
     type: 'deal' | 'stay' | 'explore';
+    isSmallThumb?: boolean;
   }
 
   export let dataCard: $$Props['dataCard'];
+  export let isSmallThumb: $$Props['isSmallThumb'] = false;
   export let type: $$Props['type'] = 'deal';
 </script>
 
 <div class={cardPlace({ class: $$props.class })}>
   <div class="flex flex-col shadow-card rounded-xl h-full overflow-hidden">
     <img
-      class="w-full h-[240px] lg:h-[397px]"
+      class={`w-full ${isSmallThumb ? 'h-[247px]' : 'h-[240px] lg:h-[397px]'}`}
       src={dataCard.image}
       alt="cart"
     />
@@ -31,7 +33,7 @@
               'text-primary': type === 'stay',
             },
           )}
-          >{dataCard.name}{#if type !== 'stay'}
+          >{dataCard.name}{#if type !== 'stay' && dataCard.place}
             <span
               class={cx({
                 'text-primary': type === 'deal',
@@ -49,9 +51,11 @@
           >
         {/if}
       </div>
-      <Text class={cx({
-        "hidden lg:block": type === 'deal',
-      })}>{dataCard.description}</Text>
+      <Text
+        class={cx({
+          'hidden lg:block': type === 'deal',
+        })}>{dataCard.description}</Text
+      >
     </div>
   </div>
 </div>
