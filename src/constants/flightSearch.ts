@@ -1,6 +1,8 @@
-export const LIST_DATA = [
+import type { IListDropdown, IListSearch } from "@/model";
+
+export const LIST_DATA:IListDropdown = [
   {
-    id: 1,
+    id: 1, 
     name: 'Item 1',
     value: 'Item 1',
   },
@@ -41,7 +43,7 @@ export const LIST_DATA = [
   },
 ];
 
-export const LIST_DATA_ADULT = [
+export const LIST_DATA_ADULT:IListDropdown = [
   {
     id: 1,
     name: 'Adult',
@@ -54,7 +56,7 @@ export const LIST_DATA_ADULT = [
   },
 ];
 
-export const LIST_DATA_FILTER = [
+export const LIST_DATA_FILTER:IListSearch = [
   {
     id: 1,
     name: 'Max price',

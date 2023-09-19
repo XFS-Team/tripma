@@ -1,0 +1,55 @@
+---
+import Seat from '@/components/common/Seat/Seat.astro';
+import src from '/icons/information.svg';
+import { LIST_DATA_SEAT_BUSINESS, LIST_DATA_SEAT_ECONOMY } from '@/constants';
+import Text from '@/components/common/Text/Text.astro';
+---
+
+<div class="w-[200px] ml-[253px] translate-y-[480px]">
+  <div class="bg-white px-2 py-5 rounded-lg mb-4">
+    {
+      LIST_DATA_SEAT_BUSINESS.map((itemRowSeat) => (
+        <div class="flex justify-between items-center mb-4 last:mb-0">
+          <div class="flex items-center gap-2">
+            <Seat isDisable={itemRowSeat.seat1} type="business" />
+            <Seat isDisable={itemRowSeat.seat2} type="business" />
+          </div>
+          <Text className="text-sm">{itemRowSeat.row}</Text>
+          <div class="flex items-center gap-2">
+            <Seat isDisable={itemRowSeat.seat3} type="business" />
+            <Seat isDisable={itemRowSeat.seat4} type="business" />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="bg-white px-2 py-5 rounded-lg">
+    {
+      LIST_DATA_SEAT_ECONOMY.map((groupSeat) => (
+        <>
+          <div class="flex items-center mb-2">
+            <img {src} alt="icon info" />
+            <Text className="text-xs">Exit row</Text>
+          </div>
+          <>
+            {groupSeat.map((itemRowSeat) => (
+              <div class="flex justify-between items-center mb-2 last:mb-0">
+                <div class="flex items-center gap-1">
+                  <Seat isDisable={itemRowSeat.seat1} type="economy" />
+                  <Seat isDisable={itemRowSeat.seat2} type="economy" />
+                  <Seat isDisable={itemRowSeat.seat3} type="economy" />
+                </div>
+                <Text className="text-sm">{itemRowSeat.row}</Text>
+                <div class="flex items-center gap-1">
+                  <Seat isDisable={itemRowSeat.seat4} type="economy" />
+                  <Seat isDisable={itemRowSeat.seat5} type="economy" />
+                  <Seat isDisable={itemRowSeat.seat6} type="economy" />
+                </div>
+              </div>
+            ))}
+          </>
+        </>
+      ))
+    }
+  </div>
+</div>

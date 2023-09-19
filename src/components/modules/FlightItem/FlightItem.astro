@@ -1,0 +1,45 @@
+---
+import Text from '@/components/common/Text/Text.astro';
+import type { IFlightInfo } from '@/model/flight';
+
+interface Props {
+  infoFlight: IFlightInfo;
+}
+
+const { infoFlight } = Astro.props;
+
+const {
+  srcImage,
+  airline,
+  arrival,
+  departure,
+  duration,
+  price,
+  stops,
+  time,
+  trip,
+} = infoFlight;
+---
+
+<div
+  class={`flex items-center px-4 py-1.5 cursor-pointer hover:bg-purple-white my-1 rounded border border-solid ${
+    false ? 'bg-purple-white border-primary' : 'border-transparent'
+  }`}
+>
+  <img class="mr-6" src={srcImage} alt="avt" />
+  <div class="flex flex-1">
+    <div class="flex flex-col gap-y-1 w-[180px]">
+      <Text className="text-grey-900">{duration}</Text>
+      <Text className="text-grey-400">{airline}</Text>
+    </div>
+    <Text className="text-grey-900 w-[180px]">{departure} - {arrival}</Text>
+    <div class="flex flex-col gap-y-1 flex-1 text-end">
+      <Text className="text-grey-900">{stops}</Text>
+      <Text className="text-grey-400">{time}</Text>
+    </div>
+    <div class="flex flex-col gap-y-1 w-[130px] text-end">
+      <Text className="text-grey-900">{price}</Text>
+      <Text className="text-grey-400">{trip}</Text>
+    </div>
+  </div>
+</div>

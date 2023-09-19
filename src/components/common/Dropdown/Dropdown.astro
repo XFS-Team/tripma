@@ -1,0 +1,84 @@
+---
+import { cva } from 'class-variance-authority';
+import Text from '../Text/Text.astro';
+import type { IListDropdown, IItemDropdown } from '@/model';
+import iconDown from '/icons/arrow-down.svg';
+import Button from '../Button/Button.astro';
+import Counter from '../Counter/Counter.astro';
+
+const dropDown = cva(
+  'border-2 border-solid rounded xl:max-w-[256px] relative py-1 inline-block',
+  {
+    variants: {
+      size: {
+        default: 'text-lg',
+        small: 'text-base',
+      },
+    },
+  },
+);
+
+interface Props {
+  type?: 'default' | 'checkbox' | 'counter';
+  placeholder?: string;
+  icon?: string;
+  listDropdown: IListDropdown;
+  isLabel?: boolean;
+  className?: string;
+  border?: string;
+}
+// need fix
+let selectedValue: any;
+let isDropdownShow = false;
+const { type, placeholder, icon, listDropdown, isLabel, className, border } =
+  Astro.props;
+---
+
+<div
+  class={dropDown({
+    class: `${
+      isDropdownShow ? 'border-primary' : 'border-transparent'
+    } ${className}`,
+  })}
+>
+  <Button size="small" className="flex items-center w-full">
+    {!isLabel && <img class="mr-2" src={icon} alt="icon fly" />}
+
+    {
+      selectedValue ? (
+        <Text className="text-sm md:text-lg">{selectedValue.name}</Text>
+      ) : (
+        <Text className="text-sm md:text-lg">{placeholder}</Text>
+      )
+    }
+
+    {isLabel && <img class="ml-1" src={iconDown} alt="icon down" />}
+  </Button>
+  {
+    isDropdownShow && (
+      <ul
+        class={`absolute top-[calc(100%+2px)] w-full xl:w-[230px] bg-white border border-solid border-grey-200 rounded-lg shadow-dropDown p-4 max-h-[312px] overflow-y-auto scroll-hidden z-20 ${
+          isLabel ? 'left-0' : 'xl:left-6'
+        }`}
+      >
+        {listDropdown.map((itemDropdown) => (
+          <li>
+            {type === 'default' && (
+              <Button className="rounded-md hover:bg-primary hover:text-white mb-2 w-full text-left px-3 py-1 text-base">
+                {itemDropdown.name}
+              </Button>
+            )}
+
+            {type === 'counter' && (
+              <Counter
+                valueCounter={itemDropdown.value}
+                className="mb-2"
+                name={itemDropdown.name}
+              />
+            )}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>

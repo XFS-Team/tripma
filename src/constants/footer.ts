@@ -1,4 +1,6 @@
-export const LIST_DATA_FOOTER = [
+import type { IListFooter, ISocial } from "@/model";
+
+export const LIST_DATA_FOOTER: IListFooter[] = [
   {
     heading: 'About',
     children: [
@@ -115,7 +117,7 @@ export const LIST_DATA_FOOTER = [
   },
 ];
 
-export const LIST_SOCIAL_FOOTER = [
+export const LIST_SOCIAL_FOOTER: ISocial[] = [
   {
     icon: '/icons/twitter.svg',
     href: '/',

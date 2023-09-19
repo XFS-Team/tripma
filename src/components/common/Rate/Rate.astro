@@ -1,0 +1,25 @@
+---
+import { cva } from 'class-variance-authority';
+import startFillIcon from '/icons/star-filled.svg';
+import startUnFillIcon from '/icons/star-unfilled.svg';
+const rate = cva('flex');
+
+interface Props {
+  start: number;
+  class?: string;
+}
+const { start, class: className } = Astro.props;
+---
+
+<div class={rate({ class: className })}>
+  {
+    Array(start)
+      .fill(0)
+      .map((_) => <img src={startFillIcon} alt="icon start" />)
+  }
+  {
+    Array(5 - start)
+      .fill(0)
+      .map((_) => <img src={startUnFillIcon} alt="icon start" />)
+  }
+</div>

@@ -1,0 +1,83 @@
+---
+import businessSeatImage from '/images/business-seats.png';
+import economySeatImage from '/images/economy-seats.png';
+import checkGreenIcon from '/icons/check-green.svg';
+import Button from '@/components/common/Button/Button.astro';
+import Text from '@/components/common/Text/Text.astro';
+---
+
+<div
+  class="flex border-b border-solid border-grey-300/[.5] overflow-y-auto scroll-hidden h-[calc(100vh-188px)] px-4 pt-10 pb-8"
+>
+  <div class="w-1/2">
+    <img src={businessSeatImage} alt="business-seat" />
+    <div class="ml-9 flex flex-col gap-y-4">
+      <div class="flex items-center">
+        <h2 class="mr-4">Economy</h2>
+        <Button size="small" intent="primary">Selected</Button>
+      </div>
+      <Text className="text-sm 2xl:text-base">
+        Rest and recharge during your flight with extended leg room,
+        personalized service, and a multi-course meal service
+      </Text>
+      <div class="w-8 h-1 bg-primary opacity-50"></div>
+      <ul class="flex flex-col gap-y-4">
+        <li class="flex items-center">
+          <span class="inline-block w-3 h-3 rounded-[50%] bg-primary mr-3"
+          ></span>
+          <Text>Built-in entertainment system</Text>
+        </li>
+        <li class="flex items-center">
+          <span class="inline-block w-3 h-3 rounded-[50%] bg-primary mr-3"
+          ></span>
+          <Text>Built-in entertainment system</Text>
+        </li>
+        <li class="flex items-center">
+          <span class="inline-block w-3 h-3 rounded-[50%] bg-primary mr-3"
+          ></span>
+          <Text>Built-in entertainment system</Text>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="w-1/2">
+    <img src={economySeatImage} alt="business-seat" />
+    <div class="ml-9 flex flex-col gap-y-4">
+      <div class="flex items-center">
+        <h2 class="mr-4">Economy</h2>
+        <Button size="small" intent="primary">Selected</Button>
+      </div>
+      <Text className="text-sm 2xl:text-base">
+        Rest and recharge during your flight with extended leg room,
+        personalized service, and a multi-course meal service
+      </Text>
+      <div class="w-8 h-1 bg-secondary opacity-50"></div>
+      <ul class="flex flex-col gap-y-4 pb-[78px]">
+        <li class="flex items-center">
+          <img src={checkGreenIcon} alt="icon check" />
+          <Text className="ml-3">Built-in entertainment system</Text>
+        </li>
+        <li class="flex items-center">
+          <img src={checkGreenIcon} alt="icon check" />
+          <Text className="ml-3">Built-in entertainment system</Text>
+        </li>
+        <li class="flex items-center">
+          <img src={checkGreenIcon} alt="icon check" />
+          <Text className="ml-3">Built-in entertainment system</Text>
+        </li>
+        <li class="flex items-center">
+          <img src={checkGreenIcon} alt="icon check" />
+          <Text className="ml-3">Built-in entertainment system</Text>
+        </li>
+        <li class="flex items-center">
+          <img src={checkGreenIcon} alt="icon check" />
+          <Text className="ml-3">Built-in entertainment system</Text>
+        </li>
+        <li class="flex items-center">
+          <img src={checkGreenIcon} alt="icon check" />
+          <Text className="ml-3">Built-in entertainment system</Text>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

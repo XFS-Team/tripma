@@ -1,0 +1,78 @@
+---
+import src from '/images/map.png';
+import type { IFlightInfo } from '@/model/flight';
+import { LIST_DATA_DEPARTURE } from '@/constants';
+import Text from '@/components/common/Text/Text.astro';
+import FlightItem from '../FlightItem/FlightItem.astro';
+import Button from '@/components/common/Button/Button.astro';
+import FlightDetail from '../FlightDetail/FlightDetail.astro';
+import PriceGrid from './PriceGrid.astro';
+import PriceHistory from './PriceHistory.astro';
+import PriceRating from './PriceRating.astro';
+
+let listSelectedFlight: IFlightInfo[] = [];
+let selectedFlight: IFlightInfo | null = null;
+let listDataFlight = LIST_DATA_DEPARTURE;
+---
+
+<div class="flex">
+  <div class="w-[882px] mr-10 flex-shrink-0">
+    <Text className="text-grey-600 font-semibold text-lg mb-4 ml-1">
+      {
+        selectedFlight ? (
+          <span>
+            Choose a <span class="text-primary">returning</span> flight
+          </span>
+        ) : (
+          <span>
+            Choose a <span class="text-primary">departing</span> flight
+          </span>
+        )
+      }
+    </Text>
+    <div class="border border-solid border-purple-extra rounded-xl">
+      <ul class="p-4 max-h-[456px] overflow-scroll scroll-hidden">
+        {
+          listDataFlight.map((itemFlight) => (
+            <li class="border-b border-solid border-purple-extra last:border-b-0">
+              <FlightItem infoFlight={itemFlight} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <Button className="float-right mt-6 mb-12" size="large" intent="secondary">
+      Show all flights
+    </Button>
+    <img {src} alt="map flight" />
+  </div>
+  <div class="w-full">
+    {
+      listSelectedFlight.length > 0 ? (
+        <>
+          <FlightDetail {listSelectedFlight} />
+          <div class="flex justify-end">
+            {listSelectedFlight.length > 1 ? (
+              <a
+                class="bg-primary text-grey-100 hover:bg-purple-dark text-lg px-5 py-3 rounded"
+                href="/info"
+              >
+                Passenger information
+              </a>
+            ) : (
+              <Button size="large" intent="secondary">
+                Save and close
+              </Button>
+            )}
+          </div>
+        </>
+      ) : (
+        <>
+          <PriceGrid />
+          <PriceHistory />
+          <PriceRating />
+        </>
+      )
+    }
+  </div>
+</div>
