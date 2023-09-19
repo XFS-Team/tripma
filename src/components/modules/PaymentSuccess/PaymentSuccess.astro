@@ -1,0 +1,30 @@
+---
+import FlightSummary from './FlightSummary.astro';
+import InfoFlight from './InfoFlight.astro';
+import OrderBill from './OrderBill.astro';
+import RecommendPlace from './RecommendPlace.astro';
+import ShareItinerary from './ShareItinerary.astro';
+import TypePayment from './TypePayment.astro';
+import mapImage from '/images/map-large.png';
+---
+
+<section class="container px-24 mt-16 mb-1">
+  <div class="flex">
+    <div class="w-3/5 mr-[92px] flex flex-col gap-y-14">
+      <InfoFlight />
+      <FlightSummary />
+      <OrderBill />
+      <TypePayment />
+      <ShareItinerary />
+      <div>
+        <h2 class="mb-6 text-2xl font-bold text-grey-600">
+          Share your travel itinerary
+        </h2>
+        <img src={mapImage} alt="map" />
+      </div>
+    </div>
+    <div class="flex-1">
+      <RecommendPlace />
+    </div>
+  </div>
+</section>

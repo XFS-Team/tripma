@@ -1,0 +1,17 @@
+---
+import CustomerReviewItem from './CustomerReviewItem.astro';
+import { LIST_CUSTOMER_REVIEW } from '@/constants';
+---
+
+<section class="container px-8 py-16 mb-10">
+  <h2 class="text-2xl font-bold text-grey-600 text-center mb-6">
+    What <span class="text-primary">Tripma</span> users are saying
+  </h2>
+  <div class="flex flex-wrap gap-y-5 -mx-5">
+    {
+      LIST_CUSTOMER_REVIEW.map((itemCustomerReview) => (
+        <CustomerReviewItem dataReview={itemCustomerReview} />
+      ))
+    }
+  </div>
+</section>

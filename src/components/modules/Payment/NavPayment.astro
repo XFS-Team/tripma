@@ -1,0 +1,28 @@
+---
+import Button from '@/components/common/Button/Button.astro';
+import type { IListMenuPayment } from '@/model';
+import { cx } from 'class-variance-authority';
+
+interface $$Props {
+  listMenu: IListMenuPayment;
+}
+
+let selectIdMenu = 1;
+
+export let listMenu: $$Props['listMenu'] = [];
+---
+
+{
+  listMenu.map((menuItem) => (
+    <Button
+      size="large"
+      intent={menuItem.key === selectIdMenu ? 'primary' : 'default'}
+      className={cx('flex items-center gap-0.5 last:flex-1', {
+        'hover:bg-purple-light': menuItem.key !== selectIdMenu,
+      })}
+    >
+      <img src={menuItem.icon} alt="" />
+      <span>{menuItem.name}</span>
+    </Button>
+  ))
+}

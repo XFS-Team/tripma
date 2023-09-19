@@ -1,0 +1,26 @@
+---
+import { cx } from 'class-variance-authority';
+import Button from '../Button/Button.astro';
+import Text from '../Text/Text.astro';
+import iconClose from '/icons/close-grey.svg';
+
+interface Props {
+  text: String;
+  className?: string;
+}
+
+const { text, className } = Astro.props;
+---
+
+<div
+  class={cx(
+    'flex items-center pl-6 py-4 border border-solid border-green-400 rounded-lg bg-green-200 mb-10',
+    className,
+  )}
+>
+  className
+  <Text size="small" className="text-green-400">{text}</Text>
+  <Button>
+    <img src={iconClose} alt="icon close" />
+  </Button>
+</div>

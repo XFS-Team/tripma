@@ -1,0 +1,34 @@
+---
+import { cva } from 'class-variance-authority';
+import Button from '../Button/Button.astro';
+import Text from '../Text/Text.astro';
+import minusImage from '/icons/minus.svg';
+import plusImage from '/icons/plus.svg';
+
+const counter = cva('flex items-center', {
+  variants: {},
+});
+
+interface Props {
+  name?: string;
+  className?: string;
+  valueCounter?: string;
+}
+
+const { name, valueCounter, className } = Astro.props;
+---
+
+<div class={counter({ class: className })}>
+  {name && <Text className="w-20">{name}:</Text>}
+  <div class="flex items-center gap-x-2">
+    <Button className="w-8 h-8 flex items-center justify-center">
+      <img src={minusImage} alt="icon minus" />
+    </Button>
+    <Text className="w-8 h-8 flex items-center justify-center">
+      {valueCounter}
+    </Text>
+    <Button className="w-8 h-8 flex items-center justify-center">
+      <img src={plusImage} alt="icon plug" />
+    </Button>
+  </div>
+</div>

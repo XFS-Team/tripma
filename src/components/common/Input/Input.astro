@@ -1,0 +1,27 @@
+---
+import { cva } from 'class-variance-authority';
+
+const input = cva('px-3 py-[9px] border border-solid border-grey-300', {
+  variants: {
+    intent: {
+      default: 'rounded outline-none text-lg font-normal text-grey-400',
+    },
+  },
+});
+
+interface Props {
+  intent?: 'default';
+  className?: string;
+  placeholder?: string;
+  required?: boolean;
+}
+
+const { intent = 'default', className, placeholder, required } = Astro.props;
+---
+
+<input
+  placeholder={placeholder}
+  type="text"
+  class={input({ intent, class: className })}
+  {required}
+/>

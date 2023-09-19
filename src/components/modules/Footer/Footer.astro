@@ -1,0 +1,50 @@
+---
+import Text from '@/components/common/Text/Text.astro';
+import { LIST_DATA_FOOTER, LIST_SOCIAL_FOOTER } from '@/constants';
+---
+
+<footer class="container">
+  <div class="flex flex-wrap mx-auto xl:flex-nowrap px-8 pt-[60px] pb-10">
+    <div class="lg:w-full xl:w-auto xl:mr-16 xl:py-4">
+      <a href="/">
+        <img src="/logo.svg" alt="logo" />
+      </a>
+    </div>
+    {
+      LIST_DATA_FOOTER.map((item) => (
+        <div class="py-4 w-full lg:w-1/2 xl:w-1/4">
+          <h4 class="text-lg text-grey-600 font-bold mb-2">{item.heading}</h4>
+          <ul>
+            {item.children.map((child) => {
+              return child.icon ? (
+                <li class="my-3">
+                  <img src={child.icon} alt={child.name} />
+                </li>
+              ) : (
+                <li class="p-1 my-1">
+                  <a class="text-base text-grey-400" href={child.href} href="">
+                    {child.name}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+  <div
+    class="flex justify-between items-center px-8 py-4 border-t border-grey-200 border-solid"
+  >
+    <div class="flex">
+      {
+        LIST_SOCIAL_FOOTER.map((item) => (
+          <div class="p-2">
+            <img src={item.icon} alt="icon" />
+          </div>
+        ))
+      }
+    </div>
+    <Text className="text-xs">© 2020 Tripma inc</Text>
+  </div>
+</footer>

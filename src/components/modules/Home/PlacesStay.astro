@@ -1,0 +1,35 @@
+---
+import CardPlace from '@/components/modules/CardPlace/CardPlace.astro';
+import arrowNextImage from '/icons/arrow-right.svg';
+import { LIST_PLACES_STAY } from '@/constants';
+import Text from '@/components/common/Text/Text.astro';
+import Button from '@/components/common/Button/Button.astro';
+---
+
+<section class="container">
+  <div class="px-8 py-10">
+    <div class="flex justify-between mb-6">
+      <Text color="secondary" style="bold" size="large">
+        Explore unique <span class="text-secondary">places to stay</span>
+      </Text>
+      <a class="text-grey-300 text-2xl flex" href="/"
+        >All
+        <img src={arrowNextImage} alt="icon next" />
+      </a>
+    </div>
+    <div class="flex flex-wrap -mx-2 lg:-mx-5">
+      {
+        LIST_PLACES_STAY.map((itemPlaceStay) => (
+          <CardPlace
+            type="explore"
+            dataCard={itemPlaceStay}
+            className="w-full sm:w-1/2 md:w-1/3"
+          />
+        ))
+      }
+    </div>
+  </div>
+  <Button intent="primary" className="my-10 flex mx-auto px-4 py-2.5">
+    Explore more stays
+  </Button>
+</section>

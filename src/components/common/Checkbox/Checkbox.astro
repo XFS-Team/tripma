@@ -1,0 +1,30 @@
+---
+import { cva } from 'class-variance-authority';
+import Button from '../Button/Button.astro';
+import Text from '../Text/Text.astro';
+
+const checkbox = cva('', {
+  variants: {
+    size: {
+      default:
+        'w-4 h-4 flex justify-center items-center border border-solid border-grey-600 mr-2 rounded-[2px] cursor-pointer',
+    },
+  },
+});
+
+interface Props {
+  label?: string;
+  size?: 'default';
+  className?: string;
+}
+
+const { label, size, className } = Astro.props;
+let isCheck = false;
+---
+
+<div class="flex items-center">
+  <Button className={checkbox({ size, class: className })}>
+    {isCheck && <span class="w-2 h-2 bg-primary rounded-[1px]" />}
+  </Button>
+  <Text color="secondary">{label}</Text>
+</div>

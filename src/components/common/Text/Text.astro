@@ -1,0 +1,40 @@
+---
+import { cva } from 'class-variance-authority';
+
+const text = cva('', {
+  variants: {
+    color: {
+      default: 'text-grey-400',
+      secondary: 'text-grey-600',
+      primary: 'text-primary',
+    },
+    size: {
+      default: 'text-lg',
+      small: 'text-base',
+      large: 'text-2xl',
+    },
+    style: {
+      default: 'font-normal',
+      bold: 'font-bold',
+    },
+  },
+});
+
+interface Props {
+  color?: 'default' | 'secondary' | 'primary';
+  size?: 'default' | 'small' | 'large';
+  style?: 'default' | 'bold';
+  className?: string;
+}
+
+const {
+  color = 'default',
+  size = 'default',
+  style = 'default',
+  className,
+} = Astro.props;
+---
+
+<p class={text({ color, size, style, class: className })}>
+  <slot />
+</p>

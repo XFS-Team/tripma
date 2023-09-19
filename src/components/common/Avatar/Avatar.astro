@@ -1,0 +1,14 @@
+---
+import { cva } from 'class-variance-authority';
+
+const avatar = cva('w-12 h-12 rounded-full');
+
+interface Props {
+  src: string;
+  className?: string;
+}
+
+const { src, className } = Astro.props;
+---
+
+<img class={avatar({ class: className })} alt="avatar" {src} />

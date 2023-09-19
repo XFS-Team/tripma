@@ -1,0 +1,17 @@
+---
+import HeaderInfoSeat from '@/components/modules/BookSeat/HeaderInfoSeat.astro';
+import DetailInfoSeat from '@/components/modules/BookSeat/DetailInfoSeat.astro';
+import ActionSeat from '@/components/modules/BookSeat/ActionSeat.astro';
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={className}>
+  <HeaderInfoSeat />
+  <DetailInfoSeat />
+  <ActionSeat />
+</div>
