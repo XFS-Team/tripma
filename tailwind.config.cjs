@@ -50,6 +50,11 @@ module.exports = {
         '.container': {
           maxWidth: '1440px',
           margin: '0 auto',
+          padding:'0 16px',
+        },
+        '.container-no-padding': {
+          maxWidth: '1440px',
+          margin: '0 auto',
         },
         '.scroll-hidden::-webkit-scrollbar': {
           display: 'none',
