@@ -31,8 +31,8 @@ const { dataReview } = Astro.props;
     <div>
       <h3 class="text-lg font-semibold text-grey-600">{dataReview.name}</h3>
       <div>
-        <Text className="text-lg text-grey-500">{dataReview.place}</Text>
-        <Text className="text-lg text-grey-500">| {dataReview.date}</Text>
+        <Text className="text-grey-500">{dataReview.place}</Text>
+        <Text className="text-grey-500">| {dataReview.date}</Text>
       </div>
       <Rate start={dataReview.rating} class="pt-2 pb-3" />
       <Text className="line-clamp-6 text-grey-900 inline">

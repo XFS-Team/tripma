@@ -1,7 +1,7 @@
 ---
 import { cva } from 'class-variance-authority';
 
-const button = cva('rounded', {
+const button = cva('rounded transition-all', {
   variants: {
     intent: {
       default: 'text-grey-400',
@@ -10,8 +10,8 @@ const button = cva('rounded', {
       disabled: 'bg-grey-200/[.3] text-grey-400 cursor-not-allowed',
     },
     size: {
-      large: 'text-lg px-5 py-3',
-      default: 'text-lg',
+      large: 'text-base lg:text-lg px-5 py-3',
+      default: 'text-base lg:text-lg',
       small: 'px-2 py-0.5 text-base',
     },
   },

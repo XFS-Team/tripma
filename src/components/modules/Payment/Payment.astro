@@ -13,9 +13,9 @@ import FlightDetail from '../FlightDetail/FlightDetail.astro';
 let isFilled = true;
 ---
 
-<section class="container px-4 md:px-8 lg:px-14 pt-12 py-24">
+<section class="container px-4 pt-12 lg:pb-12">
   <div class="flex gap-x-8 flex-wrap lg:flex-nowrap">
-    <div class="lg:w-2/3 mb-8 lg:mb-[104px]">
+    <div class="lg:w-2/3 mb-8 lg:mb-0">
       <h1 class="text-2xl text-primary font-bold mb-6">Payment method</h1>
       <Text className="mb-6">
         Select a payment method below. Tripma processes your payment securely
@@ -105,12 +105,12 @@ let isFilled = true;
       <div class="mt-6 xl:mt-14 flex gap-x-6 gap-y-3 flex-wrap">
         <a
           href="/bookseat"
-          class="rounded px-5 py-2.5 text-lg border border-primary text-primary hover:bg-purple-light w-full sm:w-auto text-center"
+          class="rounded px-5 py-2.5 text-lg border border-primary text-primary hover:bg-purple-light w-full sm:w-auto text-center transition-all"
           >Back to seat select</a
         >
         <a
           href="/payment-success"
-          class={`rounded px-5 py-2.5 text-lg w-full sm:w-auto text-center ${
+          class={`rounded px-5 py-2.5 text-lg w-full sm:w-auto text-center transition-all ${
             isFilled
               ? 'bg-primary text-grey-100 hover:bg-purple-dark'
               : 'bg-grey-200/[.3] text-grey-400 cursor-not-allowed'
@@ -125,7 +125,7 @@ let isFilled = true;
       />
       <a
         href="/payment-success"
-        class={`rounded px-5 py-2.5 text-lg text-center ${
+        class={`rounded px-5 py-2.5 text-lg text-center transition-all ${
           isFilled
             ? 'bg-primary text-grey-100 hover:bg-purple-dark'
             : 'bg-grey-200/[.3] text-grey-400 cursor-not-allowed'
