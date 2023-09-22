@@ -13,11 +13,13 @@ import Button from '@/components/common/Button/Button.astro';
     Tripma partners with thousands of hotels to get you the best deal. Save up
     to 30% when you add a hotel to your trip.
   </Text>
-  {
-    DATA_RECOMMEND_HOTEL.map((itemPlace) => (
-      <CardPlace className="lg:px-0" isSmallThumb dataCard={itemPlace} />
-    ))
-  }
+  <div class="-mx-5">
+    {
+      DATA_RECOMMEND_HOTEL.map((itemPlace) => (
+        <CardPlace className="px-0" isSmallThumb dataCard={itemPlace} />
+      ))
+    }
+  </div>
   <div class="text-center">
     <Button className="mt-5" intent="secondary" size="large">
       Shop all hotels
@@ -32,11 +34,13 @@ import Button from '@/components/common/Button/Button.astro';
     Find events and authentic cultrual experiences available exclusively to
     Tripma users.
   </Text>
-  {
-    DATA_UNIQUE_EXPERIENCES.map((itemPlace) => (
-      <CardPlace className="lg:px-0" isSmallThumb dataCard={itemPlace} />
-    ))
-  }
+  <div class="-mx-5">
+    {
+      DATA_UNIQUE_EXPERIENCES.map((itemPlace) => (
+        <CardPlace className="lg:px-0" isSmallThumb dataCard={itemPlace} />
+      ))
+    }
+  </div>
   <div class="text-center">
     <Button className="mt-5" intent="secondary" size="large">
       Shop all hotels

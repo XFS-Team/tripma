@@ -5,17 +5,17 @@ import arrowNextImage from '/icons/arrow-right.svg';
 import { POPULAR_PEOPLE_SEARCH } from '@/constants';
 ---
 
-<section class="container mb-10">
-  <div class="flex justify-between mb-6">
+<section class="container md:mb-10">
+  <div class="flex justify-between mb-4 md:mb-6 flex-wrap">
     <Text
       className="text-lg md:text-2xl"
       color="secondary"
       style="bold"
       size="large"
-    >
+    > 
       People in <span class="text-primary">San Francisco</span>also searched for
     </Text>
-    <a class="text-grey-300 text-2xl flex" href="/public"
+    <a class="text-grey-300 text-lg md:text-2xl flex items-center" href="/public"
       >All
       <img src={arrowNextImage} alt="icon next" />
     </a>
