@@ -8,9 +8,9 @@ import TypePayment from './TypePayment.astro';
 import mapImage from '/images/map-large.png';
 ---
 
-<section class="container px-24 mt-16 mb-1">
-  <div class="flex">
-    <div class="w-3/5 mr-[92px] flex flex-col gap-y-14">
+<section class="container px-4 md:px-8 lg:px-14 mb-1 mt-32">
+  <div class="flex md:flex-row flex-col">
+    <div class="md:w-3/5 md:mr-8 xl:mr-[92px] flex flex-col gap-y-14">
       <InfoFlight />
       <FlightSummary />
       <OrderBill />
@@ -21,7 +21,7 @@ import mapImage from '/images/map-large.png';
           Share your travel itinerary
         </h2>
         <img src={mapImage} alt="map" />
-      </div>
+      </div> 
     </div>
     <div class="flex-1">
       <RecommendPlace />

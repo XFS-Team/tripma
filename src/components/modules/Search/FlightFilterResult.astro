@@ -15,8 +15,8 @@ let selectedFlight: IFlightInfo | null = null;
 let listDataFlight = LIST_DATA_DEPARTURE;
 ---
 
-<div class="flex">
-  <div class="w-[882px] mr-10 flex-shrink-0">
+<div class="flex flex-wrap lg:flex-nowrap">
+  <div class="w-full lg:w-[700px] xl:w-[882px] mr-10 flex-shrink-0">
     <Text className="text-grey-600 font-semibold text-lg mb-4 ml-1">
       {
         selectedFlight ? (
@@ -31,10 +31,10 @@ let listDataFlight = LIST_DATA_DEPARTURE;
       }
     </Text>
     <div class="border border-solid border-purple-extra rounded-xl">
-      <ul class="p-4 max-h-[456px] overflow-scroll scroll-hidden">
+      <ul class="p-2 lg:p-4 max-h-[456px] overflow-x-auto overflow-y-scroll">
         {
           listDataFlight.map((itemFlight) => (
-            <li class="border-b border-solid border-purple-extra last:border-b-0">
+            <li class="border-b border-solid border-purple-extra last:border-b-0 min-w-[700px]">
               <FlightItem infoFlight={itemFlight} />
             </li>
           ))
@@ -44,13 +44,13 @@ let listDataFlight = LIST_DATA_DEPARTURE;
     <Button className="float-right mt-6 mb-12" size="large" intent="secondary">
       Show all flights
     </Button>
-    <img {src} alt="map flight" />
+    <img class="w-full mb-4 lg:mb-0" {src} alt="map flight" />
   </div>
   <div class="w-full">
     {
       listSelectedFlight.length > 0 ? (
         <>
-          <FlightDetail {listSelectedFlight} />
+          <FlightDetail className="mt-11 mb-4" {listSelectedFlight} />
           <div class="flex justify-end">
             {listSelectedFlight.length > 1 ? (
               <a
@@ -68,8 +68,10 @@ let listDataFlight = LIST_DATA_DEPARTURE;
         </>
       ) : (
         <>
-          <PriceGrid />
-          <PriceHistory />
+          <div class="flex flex-wrap gap-x-5 items-start">
+            <PriceGrid />
+            <PriceHistory />
+          </div>
           <PriceRating />
         </>
       )

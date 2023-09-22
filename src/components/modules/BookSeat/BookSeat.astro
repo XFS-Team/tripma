@@ -1,12 +1,13 @@
 ---
-import InfoSeat from "./InfoSeat.astro";
-import SelectSeat from "./SelectSeat.astro";
+import InfoSeat from './InfoSeat.astro';
+import SelectSeat from './SelectSeat.astro';
 ---
+
 <div
-  class="relative bg-[url('/images/bg-place.png')] bg-no-repeat bg-[-860px_center] h-[2700px] mb-[150px]"
+  class="relative bg-[url('/images/bg-place.png')] bg-no-repeat bg-center sm:bg-[-980px_center] lg:bg-[-860px_center] h-[2700px] mb-[150px]"
 >
   <SelectSeat />
   <InfoSeat
-    className="fixed h-screen top-0 right-0 w-1/2 bg-white/[.5] border-l border-solid border-grey-300/[.5] z-50"
+    className="fixed h-screen top-0 right-0 w-[10%] sm:w-[90%] bg-white lg:w-[55%] lg:bg-white/[.5] border-l border-solid border-grey-300/[.5] z-10"
   />
 </div>

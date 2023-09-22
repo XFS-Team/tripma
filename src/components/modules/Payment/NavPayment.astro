@@ -3,26 +3,27 @@ import Button from '@/components/common/Button/Button.astro';
 import type { IListMenuPayment } from '@/model';
 import { cx } from 'class-variance-authority';
 
-interface $$Props {
+interface Props {
   listMenu: IListMenuPayment;
 }
 
 let selectIdMenu = 1;
 
-export let listMenu: $$Props['listMenu'] = [];
+const {
+  listMenu
+} = Astro.props
 ---
 
 {
   listMenu.map((menuItem) => (
     <Button
-      size="large"
       intent={menuItem.key === selectIdMenu ? 'primary' : 'default'}
-      className={cx('flex items-center gap-0.5 last:flex-1', {
+      className={cx('justify-center py-2.5 items-center gap-0.5 flex flex-col sm:flex-row lg:flex-col xl:flex-row w-1/5 text-sm md:text-base px-1', {
         'hover:bg-purple-light': menuItem.key !== selectIdMenu,
       })}
     >
       <img src={menuItem.icon} alt="" />
       <span>{menuItem.name}</span>
     </Button>
-  ))
+  )) 
 }

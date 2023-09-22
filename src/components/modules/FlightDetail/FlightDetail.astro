@@ -4,28 +4,31 @@ import src from '/images/avt-flight.png';
 import Text from '@/components/common/Text/Text.astro';
 interface Props {
   listSelectedFlight: IFlightInfo[];
+  className?: string;
 }
 
-const { listSelectedFlight } = Astro.props;
+const { listSelectedFlight, className } = Astro.props;
 ---
 
-<div class="border border-solid border-purple-extra rounded-xl mt-11 mb-4">
-  <ul class="p-4">
+<div class=`border border-solid border-purple-extra rounded-xl ${className}`>
+  <ul class="md:p-4">
     {
       listSelectedFlight.map((itemFlight) => (
         <li class="border-b border-solid border-purple-extra last:border-none">
           <div class="flex items-start p-2 mb-2">
             <img {src} alt="avt flight" />
-            <div class="ml-2 min-w-[150px]">
-              <h3 class="mb-1">{itemFlight?.airline}</h3>
-              <Text>{itemFlight?.code}</Text>
+            <div class="mx-2 md:mx-2 lg:ml-2 md:min-w-[150px]">
+              <h3 class="mb-1 text-base">{itemFlight?.airline}</h3>
+              <Text className="text-base">{itemFlight?.code}</Text>
             </div>
-            <div class="flex flex-col gap-y-1 max-w-[200px]">
-              <Text>{itemFlight?.duration}</Text>
-              <Text>
+            <div class="flex flex-col md:flex-row lg:flex-col gap-y-1 lg:max-w-[200px] gap-x-6">
+              <Text className="text-grey-900 text-base">
+                {itemFlight?.duration}
+              </Text>
+              <Text className="text-grey-900 text-base">
                 {itemFlight?.departure} - {itemFlight?.arrival}
               </Text>
-              <Text>{itemFlight?.time}</Text>
+              <Text className="text-base">{itemFlight?.time}</Text>
             </div>
           </div>
         </li>
@@ -33,7 +36,7 @@ const { listSelectedFlight } = Astro.props;
     }
   </ul>
 </div>
-<div class="flex flex-col mb-12 items-end">
+<div class="flex flex-col mb-6 lg:mb-10 lg:items-end">
   <div class="flex">
     <div class="text-end mr-10">
       <Text className="text-grey-900 mb-2">Subtotal</Text>

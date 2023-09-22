@@ -2,7 +2,8 @@
 import HeaderInfoSeat from '@/components/modules/BookSeat/HeaderInfoSeat.astro';
 import DetailInfoSeat from '@/components/modules/BookSeat/DetailInfoSeat.astro';
 import ActionSeat from '@/components/modules/BookSeat/ActionSeat.astro';
-
+import Button from '@/components/common/Button/Button.astro';
+import nextIcon from "/icons/next.svg"
 interface Props {
   className?: string;
 }
@@ -11,6 +12,10 @@ const { className } = Astro.props;
 ---
 
 <div class={className}>
+  <div class="absolute w-full h-full bg-white z-20 sm:hidden"></div>
+  <Button className="absolute top-1/2 -translate-x-1/2 p-2 bg-white rounded-[50%] border border-solid border-grey-200">
+    <img src={nextIcon} alt="icon collapse" />
+  </Button>
   <HeaderInfoSeat />
   <DetailInfoSeat />
   <ActionSeat />

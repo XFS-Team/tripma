@@ -3,17 +3,23 @@ import Button from '@/components/common/Button/Button.astro';
 import Text from '@/components/common/Text/Text.astro';
 ---
 
-<div class="flex items-center px-7 py-4">
-  <div class="flex-1 flex flex-col p-2">
+<div
+  class="flex items-center px-3 xl:px-7 py-4 absolute bottom-0 right-0 w-full border-t border-solid border-grey-300/[.5] bg-white flex-wrap md:flex-nowrap"
+>
+  <div class="flex flex-col p-2 w-1/2 md:w-auto md:flex-1">
     <h2 class="text-grey-400 text-sm">Passenger 1</h2>
     <Text color="secondary">Sofia Knowles</Text>
   </div>
-  <div class="flex-1 flex flex-col p-2">
+  <div class="flex flex-col p-2 w-1/2 md:w-auto md:flex-1">
     <h2 class="text-grey-400 text-sm">Seat number</h2>
     <Text color="secondary">--</Text>
   </div>
-  <Button className="mr-4" intent="secondary" size="large">
+  <Button
+    className="sm:mr-4 mb-3 md:mb-0 w-full md:w-auto"
+    intent="secondary"
+    size="large"
+  >
     Save and close
   </Button>
-  <Button intent="disabled" size="large">Next flight</Button>
+  <a href="/payment" class="w-full md:w-auto bg-primary text-grey-100 hover:bg-purple-dark text-lg px-5 py-3 rounded ">Payment method</a>
 </div>

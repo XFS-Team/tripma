@@ -30,15 +30,20 @@ interface Props {
 // need fix
 let selectedValue: any;
 let isDropdownShow = false;
-const { type, placeholder, icon, listDropdown, isLabel, className, border } =
-  Astro.props;
+const {
+  type,
+  placeholder,
+  icon,
+  listDropdown,
+  isLabel,
+  className,
+  border = 'border-transparent',
+} = Astro.props;
 ---
 
 <div
   class={dropDown({
-    class: `${
-      isDropdownShow ? 'border-primary' : 'border-transparent'
-    } ${className}`,
+    class: `${isDropdownShow ? 'border-primary' : border} ${className}`,
   })}
 >
   <Button size="small" className="flex items-center w-full">
