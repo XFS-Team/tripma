@@ -9,6 +9,8 @@ module.exports = {
         card: '0px 12px 32px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(28, 5, 77, 0.10)',
         cardPayment:
           '4px 4px 16px 0px rgba(255, 255, 255, 0.20) inset, -4px -4px 16px 0px rgba(0, 0, 0, 0.10) inset',
+        calender:
+          '0px 12px 24px 0px rgba(27, 59, 119, 0.05), 0px 24px 60px 0px rgba(6, 47, 125, 0.05), 0px 2px 4px 0px rgba(7, 4, 146, 0.10)',
       },
       fontFamily: {
         sans: ['Nunito Sans', 'Inter'],
@@ -50,7 +52,7 @@ module.exports = {
         '.container': {
           maxWidth: '1440px',
           margin: '0 auto',
-          padding:'0 16px',
+          padding: '0 16px',
         },
         '.container-no-padding': {
           maxWidth: '1440px',
