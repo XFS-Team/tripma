@@ -1,7 +1,7 @@
 ---
 import { cva } from 'class-variance-authority';
 import Text from '../Text/Text.astro';
-import type { IListDropdown, IItemDropdown } from '@/model';
+import type { IListDropdown } from '@/model';
 import iconDown from '/icons/arrow-down.svg';
 import Button from '../Button/Button.astro';
 import Counter from '../Counter/Counter.astro';
@@ -22,7 +22,7 @@ interface Props {
   type?: 'default' | 'checkbox' | 'counter';
   placeholder?: string;
   icon?: string;
-  listDropdown: IListDropdown;
+  listDropdown?: IListDropdown;
   isLabel?: boolean;
   className?: string;
   border?: string;
@@ -66,23 +66,23 @@ const {
           isLabel ? 'left-0' : 'xl:left-6'
         }`}
       >
-        {listDropdown.map((itemDropdown) => (
-          <li>
-            {type === 'default' && (
-              <Button className="rounded-md hover:bg-primary hover:text-white mb-2 w-full text-left px-3 py-1 text-base">
-                {itemDropdown.name}
-              </Button>
-            )}
-
-            {type === 'counter' && (
-              <Counter
-                valueCounter={itemDropdown.value}
-                className="mb-2"
-                name={itemDropdown.name}
-              />
-            )}
-          </li>
-        ))}
+        {listDropdown &&
+          listDropdown.map((itemDropdown) => (
+            <li>
+              {type === 'default' && (
+                <Button className="rounded-md hover:bg-primary hover:text-white mb-2 w-full text-left px-3 py-1 text-base">
+                  {itemDropdown.name}
+                </Button>
+              )}
+              {type === 'counter' && (
+                <Counter
+                  valueCounter={itemDropdown.value}
+                  className="mb-2"
+                  name={itemDropdown.name}
+                />
+              )}
+            </li>
+          ))}
       </ul>
     )
   }

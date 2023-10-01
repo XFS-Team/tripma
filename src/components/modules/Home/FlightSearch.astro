@@ -5,6 +5,8 @@ import personIcon from '/icons/person.svg';
 import calendarIcon from '/icons/calendar.svg';
 import { LIST_DATA, LIST_DATA_ADULT } from '@/constants';
 import Dropdown from '@/components/common/Dropdown/Dropdown.astro';
+import CalendarRange from "@/components/common/CalendarRange"
+import Button from '@/components/common/Button/Button.astro';
 ---
 
 <section class="container-no-padding">
@@ -37,12 +39,41 @@ import Dropdown from '@/components/common/Dropdown/Dropdown.astro';
             className="w-[calc(50%-1px)] xl:w-[325px]"
           />
           <span class="w-full h-0.5 xl:h-[49px] xl:w-0.5 bg-grey-200"></span>
-          <Dropdown
-            icon={calendarIcon}
-            listDropdown={LIST_DATA}
-            placeholder="Date - return"
-            className="w-full xl:w-[252px]"
-          />
+          <div class="relative w-full md:w-auto">
+            <Dropdown
+              icon={calendarIcon}
+              listDropdown={LIST_DATA}
+              placeholder="Date - return"
+              className="w-full xl:w-[252px]"
+            />
+            <CalendarRange
+              client:load
+              className="absolute bg-white z-10 left-0 md:-left-[120px] lg:-left-[220px] -top-0 lg:-top-0 xl:-top-4"
+            >
+              <div
+                class="flex py-3 px-6 gap-x-4 border-b border-solid border-grey-200 flex-wrap justify-between lg:justify-start gap-y-2"
+              >
+                <div class="flex items-center pl-4 lg:pl-0">
+                  <input type="radio" />
+                  <label class="text-base text-grey-600 ml-2" for="">
+                    Round trip</label
+                  >
+                </div>
+                <div class="flex items-center lg:mr-5 mr-4">
+                  <input type="radio" />
+                  <label class="text-base text-grey-600 ml-2" for="">
+                    One way</label
+                  >
+                </div>
+                <Dropdown
+                  className="xl:w-[252px]"
+                  icon={calendarIcon}
+                  placeholder="Date - return"
+                />
+                <Button className="mr-4 lg:mr-0" intent="primary" size="large">Done</Button>
+              </div>
+            </CalendarRange>
+          </div>
         </div>
         <span class="hidden xl:inline-block h-[49px] w-0.5 bg-grey-200"></span>
         <Dropdown
