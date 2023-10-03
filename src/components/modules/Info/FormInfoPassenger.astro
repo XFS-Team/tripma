@@ -12,7 +12,7 @@ let isFilled = true;
 ---
 
 <div class="flex justify-between gap-x-4 flex-wrap lg:flex-nowrap mt-9">
-  <div class="w-full lg:w-[600px] xl:w-[682px]">
+  <div class="w-full lg:w-[600px] xl:w-[682px]" data-aos="fade-down">
     <Text className="mb-6">Passenger 1 (Adult)</Text>
     <form on:submit|preventDefault={() => {}} action="">
       <div class="flex gap-6 flex-wrap items-start mb-6">
@@ -74,7 +74,7 @@ let isFilled = true;
       >
     </form>
   </div>
-  <div class="flex lg:items-end sm:items-start flex-col w-full lg:w-auto">
+  <div class="flex lg:items-end sm:items-start flex-col w-full lg:w-auto" data-aos="fade-down">
     <FlightDetail className="mt-7 mb-4 w-full lg:w-auto" listSelectedFlight={SELECT_FLIGHT} />
     <a
       href="/bookseat"

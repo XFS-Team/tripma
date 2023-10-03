@@ -2,9 +2,10 @@
 import Button from '@/components/common/Button/Button.astro';
 import Input from '@/components/common/Input/Input.astro';
 import Text from '@/components/common/Text/Text.astro';
+import mapImage from '/images/map-large.png';
 ---
 
-<div>
+<div data-aos="fade-down">
   <h2 class="mb-6 text-2xl font-bold text-grey-600">
     Share your travel itinerary
   </h2>
@@ -19,9 +20,17 @@ import Text from '@/components/common/Text/Text.astro';
       <Button className="w-full sm:w-auto" intent="primary" size="large">
         Email itinerary
       </Button>
-      <Button className="w-full sm:w-auto text-primary hover:bg-purple-light px-4 py-3">
+      <Button
+        className="w-full sm:w-auto text-primary hover:bg-purple-light px-4 py-3"
+      >
         Email itinerary
       </Button>
     </div>
   </form>
+</div>
+<div data-aos="fade-down">
+  <h2 class="mb-6 text-2xl font-bold text-grey-600">
+    Share your travel itinerary
+  </h2>
+  <img src={mapImage} alt="map" />
 </div>

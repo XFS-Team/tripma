@@ -10,7 +10,10 @@ const isLogin = true;
 let isPromotion = false;
 ---
 
-<header class={cx('fixed top-0 left-0 z-50 bg-white w-full')}>
+<header
+  class={cx('fixed top-0 left-0 z-50 bg-white w-full')}
+  data-aos="fade-down"
+>
   {
     isPromotion && (
       <Promotion type="warning">
