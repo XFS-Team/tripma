@@ -6,16 +6,18 @@ import { POPULAR_PEOPLE_SEARCH } from '@/constants';
 ---
 
 <section class="md:mb-10">
-  <div class="flex justify-between mb-4 md:mb-6 flex-wrap">
+  <div class="flex justify-between mb-4 md:mb-6 flex-wrap" data-aos="fade-down">
     <Text
       className="text-lg md:text-2xl"
       color="secondary"
       style="bold"
       size="large"
-    > 
-      People in <span class="text-primary">San Francisco </span>also searched for
+    >
+      People in <span class="text-primary">San Francisco</span>also searched for
     </Text>
-    <a class="text-grey-300 text-lg md:text-2xl flex items-center" href="/public"
+    <a
+      class="text-grey-300 text-lg md:text-2xl flex items-center"
+      href="/public"
       >All
       <img src={arrowNextImage} alt="icon next" />
     </a>

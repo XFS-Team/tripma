@@ -5,11 +5,11 @@ import personIcon from '/icons/person.svg';
 import calendarIcon from '/icons/calendar.svg';
 import { LIST_DATA, LIST_DATA_ADULT } from '@/constants';
 import Dropdown from '@/components/common/Dropdown/Dropdown.astro';
-import CalendarRange from "@/components/common/CalendarRange"
+import CalendarRange from '@/components/common/CalendarRange';
 import Button from '@/components/common/Button/Button.astro';
 ---
 
-<section class="container-no-padding">
+<section class="container-no-padding" data-aos="fade-down">
   <div
     class="bg-[url('/images/world-map.png')] bg-cover bg-no-repeat lg:h-[700px]"
   >
@@ -31,7 +31,8 @@ import Button from '@/components/common/Button/Button.astro';
             placeholder="From where?"
             className="w-[calc(50%-1px)] xl:w-[325px]"
           />
-          <span class="inline-block h-[56px] sm:h-[49px] w-0.5 bg-grey-200"></span>
+          <span class="inline-block h-[56px] sm:h-[49px] w-0.5 bg-grey-200"
+          ></span>
           <Dropdown
             listDropdown={LIST_DATA}
             icon={arrivalDownIcon}
@@ -70,7 +71,9 @@ import Button from '@/components/common/Button/Button.astro';
                   icon={calendarIcon}
                   placeholder="Date - return"
                 />
-                <Button className="mr-4 lg:mr-0" intent="primary" size="large">Done</Button>
+                <Button className="mr-4 lg:mr-0" intent="primary" size="large">
+                  Done
+                </Button>
               </div>
             </CalendarRange>
           </div>
