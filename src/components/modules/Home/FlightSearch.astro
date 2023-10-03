@@ -49,7 +49,7 @@ import Button from '@/components/common/Button/Button.astro';
             />
             <CalendarRange
               client:load
-              className="absolute bg-white z-10 left-0 md:-left-[120px] lg:-left-[220px] -top-0 lg:-top-0 xl:-top-4"
+              className="absolute bg-white z-10 -left-4 -right-4 sm:right-auto sm:left-0 md:-left-[120px] lg:-left-[220px] -top-0 lg:-top-0 xl:-top-4"
             >
               <div
                 class="flex py-3 px-6 gap-x-4 border-b border-solid border-grey-200 flex-wrap justify-between lg:justify-start gap-y-2"
@@ -60,7 +60,7 @@ import Button from '@/components/common/Button/Button.astro';
                     Round trip</label
                   >
                 </div>
-                <div class="flex items-center lg:mr-5 mr-4">
+                <div class="flex items-center lg:mr-5 mr-4 pl-4 sm:pl-0">
                   <input type="radio" />
                   <label class="text-base text-grey-600 ml-2" for="">
                     One way</label

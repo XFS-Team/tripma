@@ -1,4 +1,9 @@
 .rdrCalendarWrapper {
+  @media screen and (max-width: 350px) {
+    max-width: 300px;
+    overflow-x: scroll;
+  }
+
   @media screen and (min-width: 400px) {
     width: 100%;
     margin-left: auto;
